@@ -38,6 +38,7 @@
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     [self.collectionView setBackgroundColor:[UIColor whiteColor]];
     [self.collectionView setDataSource:self];
+    [self.collectionView setDelegate:self];
     [self.collectionView registerClass:[NewsCollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
     
     [self.view addSubview:self.collectionView];
@@ -88,7 +89,7 @@
 
 #pragma mark - UICollectionViewDelegate
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     QTArticle *model = [self.news objectAtIndex:indexPath.row];
     DetailViewController *vc = [[DetailViewController alloc] initWithModel:model];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
