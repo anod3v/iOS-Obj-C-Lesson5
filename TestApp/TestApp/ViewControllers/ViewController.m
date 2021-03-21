@@ -56,10 +56,6 @@
 
 #pragma mark - UICollectionViewDataSource
 
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfRowsInSection:(NSInteger)section {
-//    return [self.news count];
-//}
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.news count];
 }
@@ -68,8 +64,6 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     NewsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: @"Cell" forIndexPath:indexPath];
     if (cell == nil) {
-//        cell = [[UICollectionViewCell alloc] initWithStyle:UICollectionViewCellStyleSubtitle
-//                                      reuseIdentifier:@"Cell"];
     }
     QTArticle *model = [self.news objectAtIndex:indexPath.row];
     if (model.author != [NSNull null]) {
@@ -78,11 +72,11 @@
         cell.mainLabel.text = @"placeholder text";
     }
     
-//    if (model.theDescription != [NSNull null]) {
-//        cell.detailTextLabel.text = [model theDescription];
-//    } else {
-//        cell.textLabel.text = @"placeholder text";
-//    }
+    if (model.theDescription != [NSNull null]) {
+        cell.detailsLabel.text = [model theDescription];
+    } else {
+        cell.detailsLabel.text = @"placeholder text";
+    }
     
     return cell;
 }
@@ -93,8 +87,6 @@
     QTArticle *model = [self.news objectAtIndex:indexPath.row];
     DetailViewController *vc = [[DetailViewController alloc] initWithModel:model];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-//    [vc setModel:model];
-//    [self.navigationController pushViewController:vc animated:true];
     [self presentViewController:nav animated:true completion:nil];
 }
 

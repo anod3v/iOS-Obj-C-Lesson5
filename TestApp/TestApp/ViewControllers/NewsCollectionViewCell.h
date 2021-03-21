@@ -10,5 +10,6 @@
 @interface NewsCollectionViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) UILabel *mainLabel;
+@property (strong, nonatomic) UILabel *detailsLabel;
 
 @end
