@@ -13,6 +13,7 @@
 		5546523B25F66E3B0047F66C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5546523A25F66E3B0047F66C /* Assets.xcassets */; };
 		5546523E25F66E3B0047F66C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5546523C25F66E3B0047F66C /* LaunchScreen.storyboard */; };
 		5546524125F66E3B0047F66C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5546524025F66E3B0047F66C /* main.m */; };
+		5564CB4726075A5500479F99 /* NewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5564CB4626075A5500479F99 /* NewsCollectionViewCell.m */; };
 		55E14F3925FBF41700EF7613 /* QTWelcome.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E14F3825FBF41700EF7613 /* QTWelcome.m */; };
 		55ED5D3725FBEDC9001A8810 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED5D3625FBEDC9001A8810 /* DetailViewController.m */; };
 		55ED5D3C25FBEE8F001A8810 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED5D3B25FBEE8F001A8810 /* NetworkService.m */; };
@@ -30,6 +31,8 @@
 		5546523D25F66E3B0047F66C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5546523F25F66E3B0047F66C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5546524025F66E3B0047F66C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5564CB45260759C300479F99 /* NewsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsCollectionViewCell.h; sourceTree = "<group>"; };
+		5564CB4626075A5500479F99 /* NewsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsCollectionViewCell.m; sourceTree = "<group>"; };
 		55E14F3825FBF41700EF7613 /* QTWelcome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTWelcome.m; sourceTree = "<group>"; };
 		55E14F4025FBF82200EF7613 /* QTWelcome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTWelcome.h; sourceTree = "<group>"; };
 		55ED5D3525FBED9B001A8810 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				5546523525F66E380047F66C /* ViewController.m */,
 				55ED5D3525FBED9B001A8810 /* DetailViewController.h */,
 				55ED5D3625FBEDC9001A8810 /* DetailViewController.m */,
+				5564CB45260759C300479F99 /* NewsCollectionViewCell.h */,
+				5564CB4626075A5500479F99 /* NewsCollectionViewCell.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				55ED5D3C25FBEE8F001A8810 /* NetworkService.m in Sources */,
 				55E14F3925FBF41700EF7613 /* QTWelcome.m in Sources */,
 				5546523325F66E380047F66C /* SceneDelegate.m in Sources */,
+				5564CB4726075A5500479F99 /* NewsCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
