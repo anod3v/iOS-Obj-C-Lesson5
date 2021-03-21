@@ -16,6 +16,7 @@
 		5564CB4726075A5500479F99 /* NewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5564CB4626075A5500479F99 /* NewsCollectionViewCell.m */; };
 		5564CB522607707800479F99 /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5564CB512607707800479F99 /* TabBar.m */; };
 		5564CB56260771CC00479F99 /* AnotherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5564CB55260771CC00479F99 /* AnotherViewController.m */; };
+		5564CB5D2607787500479F99 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5564CB5C2607787500479F99 /* SearchResultsViewController.m */; };
 		55E14F3925FBF41700EF7613 /* QTWelcome.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E14F3825FBF41700EF7613 /* QTWelcome.m */; };
 		55ED5D3725FBEDC9001A8810 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED5D3625FBEDC9001A8810 /* DetailViewController.m */; };
 		55ED5D3C25FBEE8F001A8810 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED5D3B25FBEE8F001A8810 /* NetworkService.m */; };
@@ -39,6 +40,8 @@
 		5564CB512607707800479F99 /* TabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
 		5564CB55260771CC00479F99 /* AnotherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnotherViewController.m; sourceTree = "<group>"; };
 		5564CB59260771DF00479F99 /* AnotherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnotherViewController.h; sourceTree = "<group>"; };
+		5564CB5B2607785C00479F99 /* SearchResultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
+		5564CB5C2607787500479F99 /* SearchResultsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		55E14F3825FBF41700EF7613 /* QTWelcome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTWelcome.m; sourceTree = "<group>"; };
 		55E14F4025FBF82200EF7613 /* QTWelcome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTWelcome.h; sourceTree = "<group>"; };
 		55ED5D3525FBED9B001A8810 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 			children = (
 				5546523425F66E380047F66C /* ViewController.h */,
 				5546523525F66E380047F66C /* ViewController.m */,
+				5564CB5B2607785C00479F99 /* SearchResultsViewController.h */,
+				5564CB5C2607787500479F99 /* SearchResultsViewController.m */,
 				55ED5D3525FBED9B001A8810 /* DetailViewController.h */,
 				55ED5D3625FBEDC9001A8810 /* DetailViewController.m */,
 				5564CB45260759C300479F99 /* NewsCollectionViewCell.h */,
@@ -199,6 +204,7 @@
 				55ED5D3725FBEDC9001A8810 /* DetailViewController.m in Sources */,
 				5546523625F66E380047F66C /* ViewController.m in Sources */,
 				5546523025F66E380047F66C /* AppDelegate.m in Sources */,
+				5564CB5D2607787500479F99 /* SearchResultsViewController.m in Sources */,
 				5546524125F66E3B0047F66C /* main.m in Sources */,
 				55ED5D3C25FBEE8F001A8810 /* NetworkService.m in Sources */,
 				5564CB56260771CC00479F99 /* AnotherViewController.m in Sources */,
