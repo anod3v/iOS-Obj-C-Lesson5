@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "TabBar.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +21,7 @@
     CGRect frame = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame:  frame];
     
-    ViewController *viewController = [ViewController new];
+    TabBar *viewController = [TabBar new];
     
     UINavigationController  *navigationController = [[UINavigationController alloc] initWithRootViewController: viewController];
     [self.window setRootViewController:navigationController];

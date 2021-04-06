@@ -1,27 +1,24 @@
 //
-//  ViewController.m
+//  SearchResultsViewController.m
 //  TestApp
 //
-//  Created by Andrey on 08/03/2021.
+//  Created by Andrey on 21/03/2021.
 //
 
-#import "ViewController.h"
+#import "SearchResultsViewController.h"
 #import "NetworkService.h"
 #import "DetailViewController.h"
 #import "QTWelcome.h"
 #import "NewsCollectionViewCell.h"
-#import "SearchResultsViewController.h"
 
-@interface ViewController () <UISearchResultsUpdating>
+@interface SearchResultsViewController ()
 
 @property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) NSMutableArray *news;
-@property (nonatomic, strong) UISearchController *searchController;
-@property (nonatomic, strong) SearchResultsViewController *searchResultsViewController;
+//@property (nonatomic, strong) NSMutableArray *news;
 
 @end
 
-@implementation ViewController
+@implementation SearchResultsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,13 +28,6 @@
     [self.navigationController.navigationBar setPrefersLargeTitles:YES];
  
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
-    self.searchResultsViewController = [[SearchResultsViewController alloc] init];
-    
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsViewController];
-    [self.searchController setSearchResultsUpdater:self];
-    [self.navigationItem setSearchController:self.searchController];
-    
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 10.0;
@@ -53,37 +43,25 @@
     
     [self.view addSubview:self.collectionView];
     
-    self.news = [NSMutableArray new];
+    self.results = [NSMutableArray new];
     
-    [[NetworkService sharedInstance] getNews:^(NSArray *news) {
-        [self.news addObjectsFromArray:news];
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.collectionView reloadData];
-        });
-    }];
+//    [[NetworkService sharedInstance] getNews:^(NSArray *news) {
+//        [self.news addObjectsFromArray:news];
+//
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self.collectionView reloadData];
+//        });
+//    }];
 }
 
-#pragma mark - ResultsUpdater -
-
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    if (searchController.searchBar.text) {
-        NSMutableArray *resultArray = [NSMutableArray new];
-        for (QTArticle *model in self.news) {
-            if ([model.author.uppercaseString containsString:searchController.searchBar.text.uppercaseString]) {
-                [resultArray addObject:model];
-            }
-        }
-        self.searchResultsViewController.results = resultArray;
-        [self.searchResultsViewController update];
-    }
+- (void)update {
+    [self.collectionView reloadData];
 }
-
 
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.news count];
+    return [self.results count];
 }
 
 
@@ -91,7 +69,7 @@
     NewsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: @"Cell" forIndexPath:indexPath];
     if (cell == nil) {
     }
-    QTArticle *model = [self.news objectAtIndex:indexPath.row];
+    QTArticle *model = [self.results objectAtIndex:indexPath.row];
     if (model.author != [NSNull null]) {
         cell.mainLabel.text = [model author];
     } else {
@@ -110,10 +88,11 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    QTArticle *model = [self.news objectAtIndex:indexPath.row];
+    QTArticle *model = [self.results objectAtIndex:indexPath.row];
     DetailViewController *vc = [[DetailViewController alloc] initWithModel:model];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
     [self presentViewController:nav animated:true completion:nil];
 }
 
 @end
+
